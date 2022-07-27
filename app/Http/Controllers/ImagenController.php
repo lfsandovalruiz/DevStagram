@@ -13,6 +13,8 @@ class ImagenController extends Controller
         // aquí llega la imagen que se selecciona (llega tan solo al seleccionar imagen) en el dropzone (accesible a traves de file)
         $imagen = $request->file('file');
 
+        dd($imagen);
+
         $nombreImagen = Str::uuid() . "." . $imagen->extension();
 
         // modificamos la imagen a nuestro gusto

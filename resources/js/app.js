@@ -15,7 +15,7 @@ if( document.getElementById('dropzone') ) {
 
     init: function(){
       const nombreImagen = document.querySelector('[name="imagen"]');
-
+      
       if(!nombreImagen.value.trim()) return;
 
       const imagenPublicada = {};

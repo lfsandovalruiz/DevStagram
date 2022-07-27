@@ -11,6 +11,7 @@ use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use Intervention\Image\Gd\Commands\RotateCommand;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,14 @@ use App\Http\Controllers\RegisterController;
 
 // Reglas para que reconosca las direcciones: poner las que tengan variables DESPUES de las que no tienen variables
 
-Route::get('/', function () {
-  return view('principal');
-});
+// // routing tipo closure
+// Route::get('/', function () {
+//   return view('principal');
+// });
+// Se puede llamar así
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+// Pero tembien se puede llamar de esta manera (solo cuando la clase tenga un solo método, )
+Route::get('/', HomeController::class)->name('home');
 
 // asignar nombre a uno, le asigna nombre a todos los demas con url igual
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+
+    // cuando solo se necesite una función, la funcionalidad se puede poner en __invoke (para que cuando se mande llamar la clase se ejecute esta función)
+    public function __invoke()
     {
-        dd('Home');
+        return view('home');
     }
+    
 }
